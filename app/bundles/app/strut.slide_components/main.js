@@ -36,25 +36,6 @@ function(Button, ImportingComponentButton,
 				editorModel: editorModel
 			}));
 
-			buttons.push(new ImportingComponentButton({
-				componentType: 'Video',
-				icon: 'icon-facetime-video',
-				name: lang.video,
-				tag: 'video',
-				title: lang.insert_video,
-				editorModel: editorModel,
-				ignoreErrors: true
-			}));
-
-			buttons.push(new ImportingComponentButton({
-				componentType: 'WebFrame',
-				icon: 'icon-globe',
-				name: lang.website,
-				tag: 'iframe',
-				title: lang.insert_website,
-				editorModel: editorModel
-			}));
-
 			return buttons;
 		}
 	};
