@@ -18,6 +18,7 @@ function(Backbone, Model) {
 
 		reposition: function(newPos) {
 			if (newPos.y == this._currentPos.y && !this._hidden) return;
+			if(!newPos.slidesCount || newPos.slidesCount < this.model._slideIndex + 1) return;
 
 			this.$el.css('top', newPos.y);
 			this.$el.css('left', newPos.x);

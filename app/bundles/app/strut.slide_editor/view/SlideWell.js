@@ -1,11 +1,12 @@
 define(['libs/backbone',
 		'strut/slide_snapshot/SlideSnapshot',
+		'strut/new_slide_button/NewSlideButton',
 		'common/Throttler',
 		'./WellContextMenu',
 		'tantaman/web/interactions/Sortable',
 		'strut/editor/GlobalEvents',
 		'css!styles/slide_editor/slideWell.css'],
-function(Backbone, SlideSnapshot, Throttler, WellContextMenu, Sortable, GlobalEvents, empty) {
+function(Backbone, SlideSnapshot, NewSlideButton, Throttler, WellContextMenu, Sortable, GlobalEvents, empty) {
 	'use strict';
 
 	return Backbone.View.extend({
@@ -94,8 +95,8 @@ function(Backbone, SlideSnapshot, Throttler, WellContextMenu, Sortable, GlobalEv
 				// offsetY = e.originalEvent.layerY;
 
 			var newPos = (((offsetY+40) / 112) | 0) * 112 - 5;
-			this._contextMenu.reposition({x: this.$slides.width() / 2 - this._contextMenu.$el.outerWidth() / 2, y: newPos});
-      		this._contextMenu.slideIndex(Math.ceil(newPos / 112));
+			this._contextMenu.slideIndex(Math.ceil(newPos / 112));
+			this._contextMenu.reposition({x: this.$slides.width() / 2 - this._contextMenu.$el.outerWidth() / 2, y: newPos, slidesCount: this.$slides.find('.slideSnapshot').length});
 		},
 
 		_slidesReset: function(newSlides) {
@@ -104,6 +105,8 @@ function(Backbone, SlideSnapshot, Throttler, WellContextMenu, Sortable, GlobalEv
 				this._slideAdded(slide, i);
 				i += 1;
 			}, this);
+
+			this.$slides.append((new NewSlideButton({editor: this})).render().$el);
 		},
 
 		_slideAdded: function(slide, index) {
