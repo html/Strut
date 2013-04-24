@@ -112,12 +112,24 @@ define(['libs/backbone'], function(Backbone) {
       var $colorChooser = this.$el.find(".color-chooser");
       if ($colorChooser.length > 0) {
         var hex = '333';
-        $colorChooser.ColorPicker({
+				var picker;
+				var color = null;
+        picker = $colorChooser.ColorPicker({
           color: '#' + hex,
+					onSubmit: function(){
+						$colorChooser.ColorPickerHide();
+						color = null;
+					},
+					onCancel: function(){
+            view.model.get('editableModel').set('color', color)
+					},
+					onShow: function(){
+						color = view.model.get('editableModel').get('color');
+					},
           onChange: function (hsb, hex, rgb) {
             $colorChooser.find("div").css("backgroundColor", "#" + hex);
             // Set the color of the actual text
-            //view.model.get('editableModel').set('color', hex)
+            view.model.get('editableModel').set('color', hex)
             document.execCommand('foreColor', false, hex);
           }
         });
