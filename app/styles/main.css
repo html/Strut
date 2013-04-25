@@ -116,3 +116,6 @@ border-bottom-color: #000;
   border-bottom-color: white;
 }
 
+.textBox span.scale {
+	display: none;
+}
