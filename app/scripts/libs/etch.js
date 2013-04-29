@@ -125,6 +125,9 @@ define(['libs/backbone'], function(Backbone) {
 					},
 					onShow: function(){
 						color = view.model.get('editableModel').get('color');
+						if(!color){
+							color = "333333";
+						}
 					},
           onChange: function (hsb, hex, rgb) {
             $colorChooser.find("div").css("backgroundColor", "#" + hex);
