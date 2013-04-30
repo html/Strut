@@ -1,0 +1,3 @@
+[submodule "app/scripts/jquery-seq"]
+	path = app/scripts/jquery-seq
+	url = git://github.com/html/jquery-seq.git
