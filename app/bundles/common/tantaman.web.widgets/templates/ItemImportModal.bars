@@ -17,7 +17,7 @@
               </div>
               <div class="tab-pane fade" id="internet-search-tab">
 								<div class="pull-left"><h4>Enter your query:&nbsp;</h4></div><div class="pull-left"><div class="form-inline"><input type="text" name="itemQuery" id="itemQuery"></input>&nbsp;</div></div>
-								<div id="itemSearchResults" style="clear:both">
+								<div id="itemSearchResults" style="clear:both;height:300px;overflow-y:auto;">
 								</div>
               </div>
 							<div class="tab-pane fade" id="custom-url-tab">

@@ -49,7 +49,7 @@ function(ComponentButton, ItemImportModal, jquerySeq) {
 
 			$('#itemQuery').change(function(){
 				$('#itemSearchResults').html('Loading ...');
-				$.getScript('http://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=17ae7843136128df92d1b0421783f717&sort=relevance&per_page=8&page=1&format=json&text=' + $('#itemQuery').val() + '&jsoncallback=responseFlickr');
+				$.getScript('http://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=17ae7843136128df92d1b0421783f717&sort=relevance&per_page=16&page=1&format=json&text=' + $('#itemQuery').val() + '&jsoncallback=responseFlickr');
 			});
 
 			this._itemImported = this._itemImported.bind(this);
