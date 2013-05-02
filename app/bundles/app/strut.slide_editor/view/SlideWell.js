@@ -106,7 +106,7 @@ function(Backbone, SlideSnapshot, NewSlideButton, Throttler, WellContextMenu, So
 				i += 1;
 			}, this);
 
-			this.$slides.append((new NewSlideButton({editor: this})).render().$el);
+			this.$slides.parent().append((new NewSlideButton({editor: this})).render().$el);
 		},
 
 		_slideAdded: function(slide, index) {
