@@ -13,6 +13,7 @@
 
 	<div id="myTabContent" class="tab-content">
               <div class="tab-pane fade active in" id="local-computer-tab">
+								<input type="hidden" name="itemUrlHidden">
 								<input id="insertFileInput" type="file"></input>
 								<{{tag}} class="filePreview" width="360" height"268"></{{tag}}>
               </div>

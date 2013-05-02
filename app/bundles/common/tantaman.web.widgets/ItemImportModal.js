@@ -36,10 +36,9 @@ define(['libs/backbone'], function(Backbone) {
       }
       reader = new FileReader();
 
-			var th = this;
       reader.onload = function(e) {
-				th.item2.src = e.target.result;
-				return th.src = th.item.src;
+				_this.$input2.val(e.target.result);
+				return _this.loadItem2();
       };
       return reader.readAsDataURL(f);
     },
@@ -62,6 +61,10 @@ define(['libs/backbone'], function(Backbone) {
     loadItem: function() {
       this.item.src = this.$input.val();
       return this.src = this.item.src;
+    },
+    loadItem2: function() {
+      this.item2.src = this.$input2.val();
+      return this.src = this.item2.src;
     },
     _itemLoadError: function() {
       this.$el.find(".ok").addClass("disabled");
@@ -90,6 +93,7 @@ define(['libs/backbone'], function(Backbone) {
         };
       }
       this.$input = this.$el.find("input[name='itemUrl']");
+      this.$input2 = this.$el.find("input[name='itemUrlHidden']");
 
       return this.$el;
     },
