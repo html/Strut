@@ -35,11 +35,11 @@ define(['libs/backbone'], function(Backbone) {
         return;
       }
       reader = new FileReader();
+
+			var th = this;
       reader.onload = function(e) {
-        _this.$input.val(e.target.result);
-        return _this.urlChanged({
-          which: -1
-        });
+				th.item2.src = e.target.result;
+				return th.src = th.item.src;
       };
       return reader.readAsDataURL(f);
     },
@@ -76,7 +76,8 @@ define(['libs/backbone'], function(Backbone) {
       this.$el.html(JST["tantaman.web.widgets/ItemImportModal"](this.options));
       this.$el.modal();
       this.$el.modal("hide");
-      this.item = this.$el.find(this.options.tag)[0];
+      this.item = this.$el.find(this.options.tag).filter('.imagePreview')[0];
+      this.item2 = this.$el.find(this.options.tag).filter('.filePreview')[0];
       if (this.options.tag === "video") {
         this.$el.find(".modal-body").prepend("<div class='alert alert-success'>Supports <strong>webm & YouTube</strong>.<br/>Try out: http://www.youtube.com/watch?v=vHUsdkmr-SM</div>");
       }

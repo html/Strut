@@ -8,31 +8,29 @@
 			<a href="#local-computer-tab" data-toggle="tab">Local computer</a>
 		</li>
 		<li><a href="#internet-search-tab" data-toggle="tab">Internet search</a></li>
-		<!--<li><a href="#custom-url-tab" data-toggle="tab">Custom url</a></li>-->
+		<li><a href="#custom-url-tab" data-toggle="tab">Custom url</a></li>
 	</ul>
 
 	<div id="myTabContent" class="tab-content">
               <div class="tab-pane fade active in" id="local-computer-tab">
-								<input type="hidden" name="itemUrl">
 								<input id="insertFileInput" type="file"></input>
-								<{{tag}} class="preview" width="360" height"268"></{{tag}}>
+								<{{tag}} class="filePreview" width="360" height"268"></{{tag}}>
               </div>
               <div class="tab-pane fade" id="internet-search-tab">
 								<div class="pull-left"><h4>Enter your query:&nbsp;</h4></div><div class="pull-left"><div class="form-inline"><input type="text" name="itemQuery" id="itemQuery"></input>&nbsp;</div></div>
 								<div id="itemSearchResults" style="clear:both;height:300px;overflow-y:auto;">
 								</div>
               </div>
-							<!--<div class="tab-pane fade" id="custom-url-tab">
+							<div class="tab-pane fade" id="custom-url-tab">
 								<div class="alert alert-error dispNone">
 										<button class="close" data-dismiss="alert">×</button>
 										The image URL you entered appears to be incorrect
 								</div>
 
 								<h4>URL:</h4><div class="form-inline"><input type="text" name="itemUrl"></input>&nbsp;{{#browsable}}<div data-option="browse" class="btn">Browse</div>{{/browsable}}</div>
-								<{{tag}} class="preview" width="360" height"268"></{{tag}}>
+								<{{tag}} class="imagePreview" width="360" height"268"></{{tag}}>
 								
 							</div>
-							-->
             </div>
 </div>
 <div class="modal-footer">
