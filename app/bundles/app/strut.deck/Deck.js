@@ -100,6 +100,11 @@ function(Backbone, SlideCollection, SlideCommands, CmdListFactory) {
 
         // TODO: go through and dispose of all old slides...?
 
+				if(this.get('background')){
+					$('.slideContainer').css('background', this.get('background'));
+					$('.slideSnapshot').css('background', this.get('background'));
+				}
+
         return slides.reset(rawObj.slides);
       },
       _activeSlideChanging: function(newActive) {

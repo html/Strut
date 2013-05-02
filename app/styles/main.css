@@ -119,3 +119,12 @@ border-bottom-color: #000;
 .textBox span.scale {
 	display: none;
 }
+
+.BackgroundSettings {
+	width: auto !important;
+	margin-left: -184px !important;
+}
+
+.operatingTable .slideContainer {
+	background: white;
+}

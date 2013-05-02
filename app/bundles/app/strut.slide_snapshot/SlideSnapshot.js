@@ -64,8 +64,7 @@ function(Backbone, SlideDrawer, css) {
 		_bgChanged: function() {
 			var bg = this.options.deck.get('background');
 			if (bg) {
-				this.$el.css('background-image', bg.styles[0]);
-				this.$el.css('background-image', bg.styles[1]);
+				this.$el.css('background', bg);
 			}
 		},
 

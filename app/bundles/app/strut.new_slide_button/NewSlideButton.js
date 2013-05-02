@@ -21,7 +21,7 @@ function(Backbone) {
 
 		_clicked: function() {
             this.editor._editorModel.addSlide(
-              this.editor._editorModel.slides().length -1 
+              this.editor._editorModel.slides().length
             );
 		},
 

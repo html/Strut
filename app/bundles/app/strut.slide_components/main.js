@@ -1,5 +1,6 @@
 define(['./view/ComponentButton',
 		'./view/ImportingComponentButton',
+		'./view/BackgroundSettingsButton',
 		'./model/Image',
 		'./model/TextBox',
 		'./model/WebFrame',
@@ -13,6 +14,7 @@ define(['./view/ComponentButton',
 		'./ComponentFactory',
 		'lang'],
 function(Button, ImportingComponentButton,
+		BackgroundSettingsButton,
 		Image, TextBox, WebFrame, Video,
 		ImageView, TextBoxView, WebFrameView, VideoView,
 		TextBoxDrawer, ImageDrawer, ComponentFactory, lang) {
@@ -33,6 +35,14 @@ function(Button, ImportingComponentButton,
 				name: lang.image,
 				tag: 'img',
 				title: lang.insert_image,
+				editorModel: editorModel
+			}));
+
+			buttons.push(new BackgroundSettingsButton({
+				componentType: 'TextBox',
+				icon: 'icon-book',
+				name: 'Background',
+				title: 'Background Settings',
 				editorModel: editorModel
 			}));
 

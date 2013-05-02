@@ -113,6 +113,8 @@ function(Backbone,
 
 		addSlide: function(index) {
 			this._deck.newSlide(index);
+			$('.slideContainer').css('background', this._deck.get('background'));
+			$('.slideSnapshot').css('background', this._deck.get('background'));
 		},
 
 		activeSlide: function() {
@@ -144,6 +146,12 @@ function(Backbone,
 					prevMode.close();
 				this.set('activeMode', modeService.getMode(this, this.registry));
 			}
+		},
+
+		setSlidesBackground: function(newBackground){
+			 this.deck().set('background', newBackground);
+
+			return this.set('background', newBackground);
 		},
 
 		constructor: function EditorModel(registry) {
